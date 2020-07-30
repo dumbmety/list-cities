@@ -22,4 +22,21 @@ function renderCities() {
 	}
 }
 
+function addCity() {
+	var city = document.getElementById('city')
+
+	if (city.value.trim() == '') {
+		return alert('Please enter a city.')
+	}
+
+	if (cities.includes(city.value)) {
+		alert('This city of ' + city.value + ' has already been added.')
+		return (city.value = '')
+	}
+
+	cities.push(city.value)
+	city.value = ''
+	renderCities()
+}
+
 renderCities()
