@@ -39,4 +39,14 @@ function addCity() {
 	renderCities()
 }
 
+function deleteCity(index) {
+	var city = cities[index]
+	var isDelete = confirm('Are you sure about delete ' + city + '?')
+
+	if (isDelete === true) {
+		cities.splice(index, 1)
+		renderCities()
+	}
+}
+
 renderCities()
