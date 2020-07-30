@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Cities</title>
+		<!-- meta tags -->
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- bootstrap -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+			integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+			crossorigin="anonymous"
+		/>
+		<!-- style -->
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<h1>Cities</h1>
+		<hr />
+
+		<form action="">
+			<div class="form-group">
+				<label for="city">Add a city:</label>
+				<input
+					id="city"
+					type="text"
+					class="form-control"
+					placeholder="e.g. Tehran"
+				/>
+			</div>
+			<button
+				class="btn btn-block btn-primary"
+				onclick="addCity(); return false;"
+				type="submit"
+			>
+				Submit
+			</button>
+		</form>
+
+		<hr />
+		<ul id="list-cities" class="list-group"></ul>
+		<!-- script -->
+		<script src="main.js"></script>
+	</body>
+</html>
