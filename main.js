@@ -49,4 +49,15 @@ function deleteCity(index) {
 	}
 }
 
+function editCity(index) {
+	var updateCity = prompt('Please enter new city.')
+
+	if (updateCity == cities[index]) {
+		return alert('This is the same as before.')
+	}
+
+	cities[index] = updateCity
+	renderCities()
+}
+
 renderCities()
