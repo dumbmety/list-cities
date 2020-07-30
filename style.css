@@ -1,0 +1,13 @@
+body {
+	max-width: 600px;
+	margin: 50px auto;
+}
+
+.badge {
+	outline: none !important;
+	border: none;
+}
+
+.badge-pill {
+	padding-bottom: 0.4em;
+}
