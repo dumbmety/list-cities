@@ -1,6 +1,6 @@
 # List Cities
 This is the first project I implemented with JavaScript.
-My goal in creating this project is to learn more advanced topics in JavaScript and to learn how to work with Git.
+My goal in creating this project is to learn more advanced topics for myself in JavaScript and learn how to work with Git.
 
 # Features
 - Add new city: checks that the input is not empty or duplicate.
