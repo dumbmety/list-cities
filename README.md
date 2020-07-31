@@ -10,7 +10,7 @@ My goal in creating this project is to learn more advanced topics for myself in 
 -   Edit city: as a prompt, it receives a new value from the user, alerts the user if it is duplicate, and updates it if it is a new input value.
 -   Display in Google Maps: clicking on this button, the current city name will be displayed in Google maps
 -   Clear items: clicking this button will remove all cities from your list.
--   Sweetalert2: We used the sweetalert library to display alerts.
+-   Alert Box: We used the sweetalert2 library to display alerts.
 
 # For Learning
 
