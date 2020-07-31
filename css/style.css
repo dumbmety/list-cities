@@ -1,12 +1,24 @@
 body {
 	width: 100vw;
-	height: 90vh;
-	margin: 0 auto;
-	margin-top: 10vh;
-	max-width: 600px;
+	height: 100vh;
 	background-color: #fafafa;
 }
 
 #list-cities li {
 	font-size: 20px;
+}
+
+.input-lg,
+.btn-large {
+	padding: 0.75em 1.5em;
+	font-size: 16px;
+	line-height: 1.5;
+	border-radius: 0.5em;
+}
+
+.fa-telegram-plane,
+.fa-github,
+.fa-twitter,
+.fa-instagram {
+	color: #fff;
 }
