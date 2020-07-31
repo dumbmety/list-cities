@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Cities</title>
+		<title>List Cities App</title>
 
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<link
+			href="https://unpkg.com/@primer/css/dist/primer.css"
 			rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-			integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
-		<h1>Cities</h1>
-		<hr />
+		<div>
+			<h1>List Cities App</h1>
+			<hr />
 
-		<form action="">
-			<div class="form-group">
-				<label for="city">Add a city:</label>
-				<input
-					id="city"
-					type="text"
-					class="form-control"
-					placeholder="e.g. Tehran"
-				/>
-			</div>
+			<form class="my-3">
+				<div class="input-group">
+					<input
+						id="city"
+						type="text"
+						class="form-control"
+						placeholder="Add a city..."
+					/>
+					<span class="input-group-button">
+						<button
+							class="btn btn-block btn-primary"
+							onclick="addCity(); return false;"
+							type="submit"
+						>
+							Add
+						</button>
+					</span>
+				</div>
+			</form>
+
+			<ul id="list-cities" class="Box"></ul>
+
 			<button
-				class="btn btn-block btn-primary"
-				onclick="addCity(); return false;"
-				type="submit"
+				id="btn-clear-items"
+				class="btn btn-danger d-block mx-auto mt-2"
+				onclick="clearItems()"
+				role="button"
 			>
-				Submit
+				Clear items
 			</button>
-		</form>
+		</div>
 
-		<hr />
-		<ul id="list-cities" class="list-group"></ul>
-
-		<a
-			id="btn-clear-items"
-			class="d-block mx-auto mt-2 user-select-none text-center text-danger font-weight-bold"
-			onclick="clearItems()"
-			role="button"
-		>
-			Clear items
-		</a>
-
-		<script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
 		<script src="js/main.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
 	</body>
 </html>

@@ -6,18 +6,18 @@ function renderCities() {
 	listCities.innerHTML = ''
 	for (var i = 0; i < cities.length; i++) {
 		listCities.innerHTML +=
-			'<li class="list-group-item d-flex justify-content-between align-items-center">' +
+			'<li class="Box-row d-flex flex-items-center flex-justify-between">' +
 			cities[i] +
 			'<div>' +
 			'<a target="_blank" href="https://www.google.com/maps/search/' +
 			cities[i] +
-			',+Iran" class="badge badge-info mr-2"><ion-icon name="map-outline"></ion-icon></a>' +
-			'<button class="badge badge-warning mr-2" onclick="editCity(' +
+			',+Iran" class="btn btn-sm mr-2"><i class="fas fa-map"></i></a>' +
+			'<button class="btn btn-sm btn-outline mr-2" onclick="editCity(' +
 			i +
-			')"><ion-icon name="create-outline"></ion-icon></button>' +
-			'<button class="badge badge-danger" onclick="deleteCity(' +
+			')"><i class="fas fa-edit"></i></button>' +
+			'<button class="btn btn-sm btn-danger" onclick="deleteCity(' +
 			i +
-			')"><ion-icon name="trash-outline"></ion-icon></button>' +
+			')"><i class="fas fa-trash"></i></button>' +
 			'</div>' +
 			'</li>'
 	}

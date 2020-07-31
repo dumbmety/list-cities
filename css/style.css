@@ -1,17 +1,11 @@
 body {
+	width: 100vw;
+	height: 90vh;
+	margin: 0 auto;
+	margin-top: 10vh;
 	max-width: 600px;
-	margin: 50px auto;
 }
 
-.badge {
-	outline: none !important;
-	border: none;
-}
-
-.badge-pill {
-	padding-bottom: 0.4em;
-}
-
-ion-icon {
-	color: #fff;
+#list-cities li {
+	font-size: 20px;
 }
