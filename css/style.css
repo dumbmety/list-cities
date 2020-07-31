@@ -4,6 +4,7 @@ body {
 	margin: 0 auto;
 	margin-top: 10vh;
 	max-width: 600px;
+	background-color: #fafafa;
 }
 
 #list-cities li {
