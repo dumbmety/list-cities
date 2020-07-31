@@ -1,5 +1,6 @@
 var cities = ['Ahvaz', 'Shiraz', 'Isfahan', 'Tehran']
 var listCities = document.getElementById('list-cities')
+var btnClearItems = document.getElementById('btn-clear-items')
 
 function renderCities() {
 	listCities.innerHTML = ''
@@ -36,6 +37,8 @@ function addCity() {
 
 	cities.push(city.value)
 	city.value = ''
+
+	isEmpty()
 	renderCities()
 }
 
@@ -45,6 +48,7 @@ function deleteCity(index) {
 
 	if (isDelete === true) {
 		cities.splice(index, 1)
+		isEmpty()
 		renderCities()
 	}
 }
@@ -57,7 +61,23 @@ function editCity(index) {
 	}
 
 	cities[index] = updateCity
+	isEmpty()
 	renderCities()
+}
+
+function clearItems() {
+	cities.splice(0, cities.length)
+	btnClearItems.innerHTML = ''
+
+	renderCities()
+}
+
+function isEmpty() {
+	if (cities.length > 0) {
+		btnClearItems.innerHTML = 'Clear items'
+	} else {
+		btnClearItems.innerHTML = ''
+	}
 }
 
 renderCities()
