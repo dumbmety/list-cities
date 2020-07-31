@@ -27,11 +27,24 @@ function addCity() {
 	var city = document.getElementById('city')
 
 	if (city.value.trim() == '') {
-		return alert('Please enter a city.')
+		return Swal.fire({
+			icon: 'warning',
+			html: 'Please enter a city.',
+			focusConfirm: false,
+			confirmButtonText: 'Ok',
+		})
 	}
 
 	if (cities.includes(city.value)) {
-		alert('This city of ' + city.value + ' has already been added.')
+		Swal.fire({
+			icon: 'error',
+			html:
+				city.value +
+				' has already been added.' +
+				'<div>Please enter another city.</div>',
+			focusConfirm: false,
+			confirmButtonText: 'Ok',
+		})
 		return (city.value = '')
 	}
 
@@ -44,25 +57,54 @@ function addCity() {
 
 function deleteCity(index) {
 	var city = cities[index]
-	var isDelete = confirm('Are you sure about delete ' + city + '?')
 
-	if (isDelete === true) {
-		cities.splice(index, 1)
-		isEmpty()
-		renderCities()
-	}
+	Swal.fire({
+		title: 'Are you sure?',
+		text: "You won't be able to revert this!",
+		icon: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Yes, delete it!',
+	}).then((result) => {
+		if (result.value) {
+			cities.splice(index, 1)
+			Swal.fire(
+				'Deleted!',
+				'This city from list has been deleted.',
+				'success'
+			)
+
+			isEmpty()
+			renderCities()
+		}
+	})
 }
 
 function editCity(index) {
-	var updateCity = prompt('Please enter new city.')
+	Swal.fire({
+		title: 'You can edit.',
+		input: 'text',
+		inputAttributes: {
+			autocapitalize: 'off',
+		},
+		showCancelButton: true,
+		confirmButtonText: 'Edit',
+	}).then((updateCity) => {
+		if (cities.includes(updateCity.value)) {
+			return Swal.fire(
+				'Warning!',
+				'This is the same as before.',
+				'warning'
+			)
+		}
 
-	if (updateCity == cities[index]) {
-		return alert('This is the same as before.')
-	}
+		cities[index] = updateCity.value
+		Swal.fire('Edited!', 'The previous city was edited.', 'success')
 
-	cities[index] = updateCity
-	isEmpty()
-	renderCities()
+		isEmpty()
+		renderCities()
+	})
 }
 
 function clearItems() {
