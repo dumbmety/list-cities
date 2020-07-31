@@ -91,6 +91,14 @@ function editCity(index) {
 		showCancelButton: true,
 		confirmButtonText: 'Edit',
 	}).then((updateCity) => {
+		if (updateCity.dismiss == 'cancel') {
+			return (cities[index] = cities[index])
+		}
+
+		if (updateCity.value == '') {
+			return Swal.fire('Warning!', 'Please enter a city.', 'warning')
+		}
+
 		if (cities.includes(updateCity.value)) {
 			return Swal.fire(
 				'Warning!',
