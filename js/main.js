@@ -5,23 +5,10 @@ let btnClearItems = document.getElementById('btn-clear-items');
 
 const renderCities = () => {
   listCities.innerHTML = '';
-
   for (var i = 0; i < citiesLength(); i++) {
-    listCities.innerHTML +=
-      '<li class="Box-row d-flex flex-items-center flex-justify-between">' +
-      cities[i] +
-      '<div>' +
-      '<a target="_blank" href="https://www.google.com/maps/search/' +
-      cities[i] +
-      ',+Iran" class="btn btn-sm mr-2"><i class="fas fa-map"></i></a>' +
-      '<button class="btn btn-sm btn-outline mr-2" onclick="editCity(' +
-      i +
-      ')"><i class="fas fa-edit"></i></button>' +
-      '<button class="btn btn-sm btn-danger" onclick="deleteCity(' +
-      i +
-      ')"><i class="fas fa-trash"></i></button>' +
-      '</div>' +
-      '</li>';
+    console.log(i);
+    console.log(cities[i]);
+    listCities.innerHTML += `<li class="Box-row d-flex flex-items-center flex-justify-between">${cities[i]}<div><a target="_blank" href="https://www.google.com/maps/search/${cities[i]},+Iran" class="btn btn-sm mr-2"><i class="fas fa-map"></i></a><button class="btn btn-sm btn-outline mr-2" onclick="editCity(${i})"><i class="fas fa-edit"></i></button><button class="btn btn-sm btn-danger" onclick="deleteCity(${i})"><i class="fas fa-trash"></i></button></div></li>`;
   }
 };
 
@@ -70,7 +57,6 @@ const deleteCity = index => {
     if (result.value) {
       cities.splice(index, 1);
       Swal.fire('Deleted!', 'This city from list has been deleted.', 'success');
-
       isEmpty();
       renderCities();
     }
@@ -102,7 +88,7 @@ const editCity = index => {
 };
 
 const clearItems = () => {
-  cities.splice(0, cities.length);
+  cities.splice(0, citiesLength());
   btnClearItems.innerText = '';
   renderCities();
 };
