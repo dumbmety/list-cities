@@ -1,105 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>List Cities App</title>
+  <head>
+    <title>List Cities App</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link
+      href="https://unpkg.com/@primer/css/dist/primer.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="Header">
+      <div class="Header-item Header-item--full">
+        <a
+          target="_blank"
+          href="https://github.com/devmehdineysi/list-cities"
+          class="Header-link f4 d-flex flex-items-center"
+        >
+          <img class="mr-2" src="img/logo.png" alt="Logo" />
+          <h2>List Cities App</h2>
+        </a>
+      </div>
+      <div class="Header-item mr-0">
+        <a class="h4" target="_blank" href="https://t.me/neysimehdi">
+          <i class="mr-4 fab fa-telegram-plane"></i>
+        </a>
+        <a class="h4" target="_blank" href="https://twitter.com/dev_mehdineysi">
+          <i class="mr-4 fab fa-twitter"></i>
+        </a>
+        <a class="h4" target="_blank" href="https://github.com/devmehdineysi">
+          <i class="mr-4 fab fa-github"></i>
+        </a>
+        <a class="h4" target="_blank" href="https://linkedin.com/in/neysimehdi">
+          <i class="mr-4 fab fa-linkedin"></i>
+        </a>
+        <a
+          class="h4"
+          target="_blank"
+          href="https://instagram.com/dev_mehdineysi"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+    </div>
 
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <div class="mt-10 container-sm">
+      <form class="my-3">
+        <div class="input-group">
+          <input
+            id="city"
+            type="text"
+            class="form-control input-lg"
+            placeholder="Add a city..."
+          />
+          <span class="input-group-button">
+            <button
+              class="btn btn-large btn-block btn-primary"
+              onclick="addCity(); return false;"
+              type="submit"
+            >
+              Add
+            </button>
+          </span>
+        </div>
+      </form>
+      <ul id="list-cities" class="Box"></ul>
+      <a
+        id="btn-clear-items"
+        class="btn btn-invisible d-block mx-auto mt-2 text-center text-red"
+        onclick="clearItems()"
+        role="button"
+      >
+        Clear items
+      </a>
+    </div>
 
-		<link rel="shortcut icon" href="img/favicon.ico" />
-		<link
-			href="https://unpkg.com/@primer/css/dist/primer.css"
-			rel="stylesheet"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.min.css"
-		/>
-		<link rel="stylesheet" href="css/style.css" />
-	</head>
-	<body>
-		<div class="Header">
-			<div class="Header-item Header-item--full">
-				<a
-					target="_blank"
-					href="https://github.com/devmehdineysi/list-cities"
-					class="Header-link f4 d-flex flex-items-center"
-				>
-					<img class="mr-2" src="img/logo.png" alt="Logo" />
-					<h2>List Cities App</h2>
-				</a>
-			</div>
-			<div class="Header-item mr-0">
-				<a class="h4" target="_blank" href="https://t.me/neysimehdi">
-					<i class="mr-4 fab fa-telegram-plane"></i>
-				</a>
-				<a
-					class="h4"
-					target="_blank"
-					href="https://twitter.com/dev_mehdineysi"
-				>
-					<i class="mr-4 fab fa-twitter"></i>
-				</a>
-				<a
-					class="h4"
-					target="_blank"
-					href="https://github.com/devmehdineysi"
-				>
-					<i class="mr-4 fab fa-github"></i>
-				</a>
-				<a
-					class="h4"
-					target="_blank"
-					href="https://linkedin.com/in/neysimehdi"
-				>
-					<i class="mr-4 fab fa-linkedin"></i>
-				</a>
-				<a
-					class="h4"
-					target="_blank"
-					href="https://instagram.com/dev_mehdineysi"
-				>
-					<i class="fab fa-instagram"></i>
-				</a>
-			</div>
-		</div>
-
-		<div class="mt-10 container-sm">
-			<form class="my-3">
-				<div class="input-group">
-					<input
-						id="city"
-						type="text"
-						class="form-control input-lg"
-						placeholder="Add a city..."
-					/>
-					<span class="input-group-button">
-						<button
-							class="btn btn-large btn-block btn-primary"
-							onclick="addCity(); return false;"
-							type="submit"
-						>
-							Add
-						</button>
-					</span>
-				</div>
-			</form>
-
-			<ul id="list-cities" class="Box"></ul>
-
-			<a
-				id="btn-clear-items"
-				class="btn btn-invisible d-block mx-auto mt-2 text-center text-red"
-				onclick="clearItems()"
-				role="button"
-			>
-				Clear items
-			</a>
-		</div>
-
-		<script src="js/main.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
-	</body>
+    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  </body>
 </html>
